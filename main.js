@@ -3,4 +3,46 @@ function generateScramble(){
     document.getElementById('scramble').innerHTML = a.join(' ');
 }
 
-window.onload = generateScramble()
+document.addEventListener('keyup', logKey);
+
+function logKey(e) {
+    console.log(`${e.key}`)
+
+    if (e.key == ' ') {
+        timer();
+    }
+};
+
+window.onkeydown = function(e) { 
+    return !(e.keyCode == 32);
+};
+var start;
+var loop;
+var delta;
+
+function timer() {
+    if (timerStatus == 0) {
+        timerStatus = 1;
+
+        start = Date.now;
+        
+        loop = setInterval(function () {
+            delta = Date.now() - start; // milliseconds elapsed since start
+        
+            console.log(delta); // in seconds
+
+            document.getElementById('timer').innerHTML = toString(delta);
+        }, 1000); // update about every second
+
+    } else {
+        timerStatus = 0;
+
+        clearInterval(loop);
+    }
+}
+
+function update() {
+
+};
+
+window.onload = timerStatus = 0; 
