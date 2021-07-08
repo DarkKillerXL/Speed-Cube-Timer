@@ -11,23 +11,35 @@ body {
     font-size: 20px;
 }
 
+.solidBG {
+    background-color: rgb(231, 236, 236);
+    position: sticky;
+    top: 0;
+    padding-top: 1px;
+
+    width: 80%;
+    margin: auto;
+}
+
 .box {
     width: 80%;
     margin: 50px auto;
 }
 
+.shadow {
+    box-shadow: 1px 1px 2px rgb(105, 105, 105);
+}
+
 .scramble {
-    position: sticky;
-    top: 20px;
     padding: 15px;
     border-radius: 10px;
 
     text-align: center;
 
-    box-shadow: 1px 1px 2px rgb(105, 105, 105);
     background: white;
 
     overflow: hidden;
+    width: calc(100% - 30px);
 }
 
 .reset {
@@ -51,4 +63,24 @@ body {
     text-align: center;
     font-size: 100px;
     font-weight: 540;
+}
+
+.tableWrapper {
+    background-color: white;
+    padding: 25px 40px;
+    border-radius: 10px;
+    
+}
+.timeTable {
+    width: 100%;
+    table-layout: auto;
+    text-align: center;
+    border-collapse: collapse;
+}
+td, th {
+    border: 1px solid black;
+    padding: 8px;
+}
+td > i, th > i {
+    cursor: pointer;
 }
